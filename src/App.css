@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+.react-calculator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	width: fit-content;
+	padding: 60px 0;
+	text-align: center;
+	border-radius: 5px;
+	background: #18263b;
+	box-shadow: 0 10px 12px rgb(0 0 0 / 0.15);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator-inner {
+	width: 440px;
+	margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.display-wrap {
+	background: #121c2b;
+	border: 2px solid #212f44;
+	padding: 20px;
+	margin: 0 20px 20px;
+}
+
+#display {
+	text-align: right;
+	color: lime;
+	text-shadow: 0 0 10px;
+}
+
+#calc-buttons {
+	display: flex;
+}
+
+
+/* LEFT COLUMN - NUMBERS */
+
+.left-wrap {
+	flex: 0 0 60%;
+}
+
+
+/* RIGHT COLUMN */
+
+.right-middle-row {
+	display: flex;
+}
+
+
+/* MIDDLE ROW */
+
+.middle-wrap {
+	display: flex;
+}
+
+.middle-right-wrap {
+	display: flex;
+	flex-direction: column;
+}
+
+.middle-left-wrap {
+	display: flex;
+	align-self: stretch;
+}
+
+.right-bottom-row {
+	display: flex;
+}
+
+button {
+	font-family: 'Oswald', sans-serif;
+	cursor: pointer;
+	color: #fff;
+	position: relative;
+	opacity: 0.5;
+	margin: 10px;
+	height: 65px;
+	width: 65px;
+	background: none;
+	outline: none;
+	border: none;
+	-webkit-transition: .425s;
+	-o-transition: .425s;
+	transition: .425s;
+}
+
+button:hover {
+	opacity: 1;
+}
+
+
+/* NUMBER BUTTON */
+
+.number-btn {
+	background: #22334e;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 0;
+	border-radius: 50%;
+}
+
+
+/* OPERATOR BUTTON */
+
+.operator-btn {
+	font-size: 16px;
+	border-radius: 50%;
+	background: linear-gradient(145deg, rgba(238, 182, 104, 1) 0%, rgba(245, 97, 110, 1) 100%);
+}
+
+#add {
+	font-size: 30px;
+	height: auto;
+	float: left;
+	border-radius: 20px;
+}
+
+#clear {
+	background: linear-gradient(145deg, rgb(249 133 133) 0%, rgb(187 39 52) 100%);
+}
+
+#equals {
+	font-size: 30px;
+	background: linear-gradient(145deg, rgb(232 190 132) 0%, rgb(220 78 90) 100%);
+	border-radius: 20px;
+	flex: 1;
+}
+@media (max-width: 736px) {
+  .display-wrap {
+    margin: 0 10px 20px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  button {
+    margin: 5px;
   }
-  to {
-    transform: rotate(360deg);
+  .calculator-inner {
+    width: 380px;
   }
 }
